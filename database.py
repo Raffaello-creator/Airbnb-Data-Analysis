@@ -1,7 +1,6 @@
 import sqlite3
 import pandas as pd
 
-
 def create_database(df, db_name='airbnb_data.db'):
     # Создаем подключение к базе данных SQLite
     conn = sqlite3.connect(db_name)
@@ -17,23 +16,6 @@ def execute_sql_query(conn, query):
     return pd.read_sql(query, conn)
 
 
-if __name__ == "__main__":
-    # Загружаем очищенные данные
-    df = pd.read_csv('data/cleaned_airbnb_data.csv')
 
-    # Создаем базу данных
-    conn = create_database(df)
-
-    # Пример SQL-запроса: количество объявлений в каждом районе
-    query = '''
-    SELECT neighbourhood, COUNT(*) AS num_listings
-    FROM airbnb_data
-    GROUP BY neighbourhood
-    ORDER BY num_listings DESC
-    LIMIT 10;
-    '''
-    popular_neighbourhoods = execute_sql_query(conn, query)
-    print(popular_neighbourhoods)
-
-    # Закрываем соединение с базой данных
-    conn.close()
+        # Создаем базу данных
+        conn = create_database(df)
