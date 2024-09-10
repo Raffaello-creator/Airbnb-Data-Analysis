@@ -1,15 +1,7 @@
-import tkinter as tk
-from tkinter import filedialog, messagebox
-from tkinter.ttk import Combobox
-from tkinter import ttk
-
-from matplotlib.font_manager import weight_dict
 
 from database import *
-import pandas as pd
+from data_cleaning import *
 import sqlite3
-import matplotlib.pyplot as plt
-import seaborn as sns
 from visuals import *
 
 # Основное окно приложения
@@ -89,7 +81,7 @@ def main():
         ''',
 
 
-        # Добавьте больше запросов по мере необходимости
+
     }
 
     # Функция для обработки выбранного запроса

@@ -17,5 +17,5 @@ def execute_sql_query(conn, query):
 
 
 
-        # Создаем базу данных
-        conn = create_database(df)
+    # Создаем базу данных
+    conn = create_database(df)
